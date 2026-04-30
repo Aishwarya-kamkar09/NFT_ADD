@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Certificate</title>
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .box {
+            margin-top: 100px;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            background: #111827;
+        }
+
+        .real { color: #22c55e; }
+        .fake { color: #ef4444; }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>🔍 Certificate Verification</h2>
+
+    {% if result.status == "REAL" %}
+        <h3 class="real">✅ REAL CERTIFICATE</h3>
+    {% else %}
+        <h3 class="fake">❌ FAKE CERTIFICATE</h3>
+    {% endif %}
+
+    <p>{{ result.message }}</p>
+    <p><b>Hash:</b> {{ result.hash }}</p>
+
+</div>
+
+</body>
+</html>

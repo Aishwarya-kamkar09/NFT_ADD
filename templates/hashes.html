@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blockchain Hashes</title>
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #334155;
+            padding: 10px;
+        }
+
+        th {
+            background: #1e293b;
+        }
+
+        td {
+            background: #111827;
+        }
+
+        .status {
+            color: #22c55e;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>🔗 Blockchain Stored Hashes</h2>
+
+<p>🟢 Connected to Ganache</p>
+
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Hash</th>
+        <th>Status</th>
+    </tr>
+
+    {% for h in hashes %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ h[:20] }}...</td>
+        <td class="status">Stored</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">⬅ Back to Upload</a>
+
+</body>
+</html>
